@@ -37,7 +37,14 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opac
 .brand{font-weight:900;font-size:19px;letter-spacing:.02em}
 .brand small{display:block;font-weight:600;font-size:10px;letter-spacing:.16em;color:var(--mut);text-transform:uppercase;margin-top:2px}
 .pill{font-size:12px;font-weight:800;padding:8px 13px;border-radius:999px;background:linear-gradient(90deg,var(--acc),var(--pink));color:#fff;letter-spacing:.02em;box-shadow:0 8px 22px rgba(225,42,114,.35)}
-.grid{display:grid;grid-template-columns:1fr;gap:0;align-items:start}
+.grid{display:grid;grid-template-columns:1fr;grid-template-areas:'intro' 'stage' 'card' 'feats';gap:0;align-items:start}
+.intro{grid-area:intro;padding:2px 2px 14px}
+.intro h2{font-size:23px;line-height:1.12;font-weight:900;letter-spacing:-.02em}
+.intro p{font-size:14px;line-height:1.45;color:var(--mut);margin-top:8px}
+.stage{grid-area:stage}.card{grid-area:card}
+.feats{grid-area:feats;display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding:0 6px}
+.feats span{font-size:13px;font-weight:700;padding:9px 12px;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid var(--line);color:#f4d6df}
+.feats span:before{content:'✓';color:var(--acc2);margin-right:7px;font-weight:900}
 /* sahna */
 .stage{position:relative;aspect-ratio:1/1;border-radius:28px;overflow:hidden;background:
   radial-gradient(60% 55% at 50% 58%,rgba(255,122,88,.55),rgba(225,42,114,.35) 45%,transparent 72%),
@@ -76,7 +83,7 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding-top:22px}
 @keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
 @keyframes tw{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:1;transform:scale(1.1)}}
 @media(prefers-reduced-motion:reduce){.stage .r2,.spark{animation:none}}
-@media(min-width:880px){.grid{grid-template-columns:1fr 420px;gap:34px;align-items:center}.stage{aspect-ratio:1/1.02}.card{margin:0;position:sticky;top:20px}.card h1{font-size:30px}.page{padding-top:26px}.tag{font-size:16px}}
+@media(min-width:880px){.grid{grid-template-columns:1fr 420px;grid-template-areas:'stage intro' 'stage card' 'stage feats';grid-template-rows:auto auto 1fr;column-gap:34px;align-items:start}.intro{align-self:end;padding-bottom:16px}.intro h2{font-size:30px}.intro p{font-size:15px}.feats{margin-top:14px;padding:0}.stage{align-self:center;grid-row:1/4}.stage{aspect-ratio:1/1.02}.card{margin:0}.card h1{font-size:30px}.page{padding-top:26px}.tag{font-size:16px}}
 </style>
 </head>
 <body>
@@ -86,6 +93,10 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding-top:22px}
   </div>
 
   <div class="grid">
+    <div class="intro">
+      <h2>So'z bilan hayotingizni boshqaring!</h2>
+      <p>6 haftada hissiy qo'rquvni yengib, sahnada ishonchli bo'ling. Tadbirkorlar va rahbarlar uchun maxsus oflayn kurs.</p>
+    </div>
     <div class="stage" aria-hidden="false">
       <div class="scratch"></div>
       <div class="ring r3"></div><div class="ring r2"></div><div class="ring r1"></div>
@@ -107,6 +118,7 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding-top:22px}
       </form>
       <div class="done" id="ok"><div class="c">✓</div><b>Rahmat, joy band qilindi</b><p>Menejerimiz tez orada siz bilan bog'lanadi</p></div>
     </div>
+    <div class="feats"><span>18 ta nazariy va 18 ta amaliy dars</span><span>Vokal mashg'ulotlari</span><span>Speaking Club</span><span>Kurator yordami</span><span>Networking imkoniyati</span></div>
   </div>
   <footer>Najot Nur notiqlik markazi</footer>
 </div>
